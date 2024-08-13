@@ -11,9 +11,11 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 5));
-    Navigator.of(context)
-        .pushReplacement(MaterialPageRoute(builder: (_) => const HomePage()));
+    Future.delayed(
+      Duration(seconds: 5),
+      () => Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => const HomePage())),
+    );
   }
 
   @override
