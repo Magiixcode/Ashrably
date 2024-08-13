@@ -25,6 +25,6 @@ flutter:
   fonts:
     - family: Marhey
       fonts:
-        #       - asset: fonts/Schyler-Regular.ttf
+        - asset: assets/fonts/Marhey-Bold.ttf
         - asset: assets/fonts/Marhey-VariableFont_wght.ttf
   #         style: italic
