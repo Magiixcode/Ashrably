@@ -8,6 +8,130 @@ class HomePgae extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: KPrimaryColor,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 45),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                IconButton(
+                    icon: Icon(
+                      Icons.menu,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (BuildContext context) {
+                            return HomePgae();
+                          },
+                        ),
+                      );
+                    }),
+                Text(
+                  'الرئيسية ',
+                  style: TextStyle(
+                    fontFamily: 'Marhey',
+                    color: Colors.white,
+                    fontSize: 45,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            Text(
+              'التقدم ',
+              style: TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: 320,
+              height: 110,
+              decoration: BoxDecoration(
+                color: Color(0xff1911E9),
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Text(
+                '55%',
+                style: TextStyle(
+                  fontFamily: 'Marhey',
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Text(
+              'عاش يابطل ',
+              style: TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            Container(
+              alignment: Alignment.center,
+              width: 240,
+              height: 55,
+              decoration: BoxDecoration(
+                color: Color(0xffB69EDC),
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Text(
+                'التنبية القادم : 10:15 دقيقة ',
+                style: TextStyle(
+                  fontFamily: 'Marhey',
+                  color: Colors.white,
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Text(
+              ' معدل الشرب في الساعة الواحدة  :500 ملي لتر  ',
+              style: TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Text(
+              ' خلي الميه جنبك دايما، وزوقها، واشربها قبل وأثناء وبعد الرياضة، وكل فواكه وخضار كتير، ومتنساش تسمع لجسمك ',
+              style: TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
