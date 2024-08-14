@@ -64,10 +64,12 @@ class Splash2 extends StatelessWidget {
                   SizedBox(
                     width: 20,
                   ),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
-                  )
+                  IconButton(
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.white,
+                      ),
+                      onPressed: () {})
                 ],
               )
             ],
