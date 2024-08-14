@@ -1,3 +1,4 @@
+import 'package:ashrably_app/pages/spalsh_six.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +69,7 @@ class Splash5 extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (BuildContext context) {
-                              return Splash5();
+                              return Spalsh6();
                             },
                           ),
                         );
