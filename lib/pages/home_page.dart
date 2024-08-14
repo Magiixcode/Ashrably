@@ -1,3 +1,4 @@
+import 'package:ashrably_app/pages/splash.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,9 +13,9 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 5),
+      Duration(seconds: 2),
       () => Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (_) => const HomePage())),
+          .pushReplacement(MaterialPageRoute(builder: (_) => const Splash2())),
     );
   }
 
