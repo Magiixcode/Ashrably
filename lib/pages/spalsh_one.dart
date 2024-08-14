@@ -1,4 +1,4 @@
-import 'package:ashrably_app/pages/splash.dart';
+import 'package:ashrably_app/pages/splash_tow.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {

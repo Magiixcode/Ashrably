@@ -1,4 +1,4 @@
-import 'package:ashrably_app/pages/splash3.dart';
+import 'package:ashrably_app/pages/spalsh_three.dart';
 import 'package:ashrably_app/widget/custom_background_blur.dart';
 import 'package:ashrably_app/widget/custom_ellipse.dart';
 import 'package:flutter/material.dart';
