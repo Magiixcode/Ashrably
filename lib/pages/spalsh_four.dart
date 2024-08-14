@@ -1,47 +1,34 @@
-import 'package:ashrably_app/pages/spalsh_four.dart';
+import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:flutter/material.dart';
 
-class Splash3 extends StatelessWidget {
-  const Splash3({super.key});
+class Spalsh4 extends StatelessWidget {
+  const Spalsh4({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff480CA8),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(
-              flex: 1,
-            ),
-            Image.asset(
-              'assets/images/water.png',
-              height: 300,
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
-              child: Text(
-                maxLines: 3,
-                textAlign: TextAlign.center,
-                "بتشرب مياة قليل او بتنشغل هساعدك تشرب الكمية اللي تحبها بدون تعقيد ",
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
+            Text(
+              textAlign: TextAlign.center,
+              "عاوز تشرب كام لتر في اليوم ؟",
+              style: TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
               ),
             ),
-            Spacer(
-              flex: 1,
+            SizedBox(
+              height: 50,
             ),
+            CustomTextFiled(),
             Row(
-              mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Image.asset('assets/images/man_water.png'),
                 Text(
                   'يلا بينا',
                   style: TextStyle(
