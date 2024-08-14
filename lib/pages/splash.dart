@@ -1,3 +1,4 @@
+import 'package:ashrably_app/pages/splash3.dart';
 import 'package:ashrably_app/widget/custom_background_blur.dart';
 import 'package:ashrably_app/widget/custom_ellipse.dart';
 import 'package:flutter/material.dart';
@@ -53,34 +54,43 @@ class Splash2 extends StatelessWidget {
               Spacer(
                 flex: 1,
               ),
-              Row(
-                children: [
-                  Image(
-                      image: AssetImage(
-                    'assets/images/Ellipse 2.png',
-                  )),
-                  SizedBox(
-                    width: 130,
-                  ),
-                  Text(
-                    'التالي',
-                    style: TextStyle(
-                      fontFamily: 'Marhey',
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
+              Positioned(
+                right: 10,
+                child: Row(
+                  children: [
+                    Image(
+                        image: AssetImage(
+                      'assets/images/Ellipse 2.png',
+                    )),
+                    SizedBox(
+                      width: 130,
                     ),
-                  ),
-                  SizedBox(
-                    width: 20,
-                  ),
-                  IconButton(
-                      icon: Icon(
-                        Icons.arrow_forward_ios,
+                    Text(
+                      'التالي',
+                      style: TextStyle(
+                        fontFamily: 'Marhey',
                         color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
                       ),
-                      onPressed: () {})
-                ],
+                    ),
+                    IconButton(
+                        icon: Icon(
+                          Icons.arrow_forward_ios,
+                          color: Colors.white,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) {
+                                return Splash3();
+                              },
+                            ),
+                          );
+                        })
+                  ],
+                ),
               )
             ],
           ),
