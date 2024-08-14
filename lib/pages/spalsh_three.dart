@@ -1,5 +1,6 @@
 import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/spalsh_four.dart';
+import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
 class Splash3 extends StatelessWidget {
@@ -8,67 +9,53 @@ class Splash3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: KPrimaryColor,
+      backgroundColor: Color(0xff480CA8),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
+        child: Stack(
           children: [
-            Spacer(
-              flex: 1,
+            Positioned(
+              top: 150,
+              left: 15,
+              right: 15,
+              child: Image.asset(
+                'assets/images/water.png',
+                height: 250,
+              ),
             ),
-            Image.asset(
-              'assets/images/water.png',
-              height: 300,
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 32),
+            const Positioned(
+              bottom: 200,
+              left: 15,
+              right: 35,
               child: Text(
                 maxLines: 3,
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.right,
                 "بتشرب مياة قليل او بتنشغل هساعدك تشرب الكمية اللي تحبها بدون تعقيد ",
                 style: TextStyle(
+                  fontFamily: 'Marhey',
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 50,
+              right: 15,
+              child: NextButton(
+                page: const Spalsh4(),
+                iconColor: Colors.white,
+                text: 'يلا بينا',
+                padding: 30,
+                styleText: const TextStyle(
                   fontFamily: 'Marhey',
                   color: Colors.white,
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
+                icon: Icons.arrow_forward_ios,
               ),
             ),
-            Spacer(
-              flex: 1,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'يلا بينا',
-                  style: TextStyle(
-                    fontFamily: 'Marhey',
-                    color: Colors.white,
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                IconButton(
-                    icon: Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.white,
-                    ),
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return Spalsh4();
-                          },
-                        ),
-                      );
-                    })
-              ],
-            )
           ],
         ),
       ),

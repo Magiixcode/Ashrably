@@ -2,6 +2,7 @@ import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/spalsh_three.dart';
 import 'package:ashrably_app/widget/custom_background_blur.dart';
 import 'package:ashrably_app/widget/custom_ellipse.dart';
+import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
 class Splash2 extends StatelessWidget {
@@ -64,37 +65,18 @@ class Splash2 extends StatelessWidget {
                         image: AssetImage(
                       'assets/images/Ellipse 2.png',
                     )),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return const Splash3();
-                            },
-                          ),
-                        );
-                      },
-                      child: const Padding(
-                        padding: EdgeInsets.only(right: 30.0),
-                        child: Row(
-                          children: [
-                            Text(
-                              'التالي',
-                              style: TextStyle(
-                                fontFamily: 'Marhey',
-                                color: Colors.white,
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Icon(
-                              Icons.arrow_forward_ios,
-                              color: Colors.white,
-                            ),
-                          ],
-                        ),
+                    NextButton(
+                      page: const Splash3(),
+                      iconColor: Colors.white,
+                      text: 'التالي',
+                      padding: 30,
+                      styleText: const TextStyle(
+                        fontFamily: 'Marhey',
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
                       ),
+                      icon: Icons.arrow_forward_ios,
                     ),
                   ],
                 ),

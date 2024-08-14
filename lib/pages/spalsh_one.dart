@@ -14,7 +14,8 @@ class _Splash1State extends State<Splash1> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 2),
+      const Duration(seconds: 2),
+      // ignore: use_build_context_synchronously
       () => Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (_) => const Splash2())),
     );
@@ -28,7 +29,7 @@ class _Splash1State extends State<Splash1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: KPrimaryColor,
+      backgroundColor: Color(0xff480CA8),
       body: Center(
         child: Text(
           'اشربلي',
