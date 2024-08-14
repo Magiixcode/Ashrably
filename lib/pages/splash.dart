@@ -1,4 +1,5 @@
 import 'package:ashrably_app/widget/custom_background_blur.dart';
+import 'package:ashrably_app/widget/custom_ellipse.dart';
 import 'package:flutter/material.dart';
 
 class Splash2 extends StatelessWidget {
@@ -13,13 +14,22 @@ class Splash2 extends StatelessWidget {
           CustomBackgroundColor(direction: Alignment.bottomRight),
           Column(
             children: [
+              CustomPaint(
+                size: Size(200, 100),
+                painter: EllipsePainter(
+                  width: 332.05,
+                  hight: 369.5,
+                  top: -167,
+                  left: 214,
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Image(
-                      image: AssetImage(
-                    'assets/images/Ellipse 3.png',
-                  )),
+                  // Image(
+                  //     image: AssetImage(
+                  //   'assets/images/Ellipse 3.png',
+                  // )),
                 ],
               ),
               Spacer(
