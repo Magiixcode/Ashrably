@@ -1,9 +1,8 @@
-import 'package:ashrably_app/pages/splash_five.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:flutter/material.dart';
 
-class Spalsh4 extends StatelessWidget {
-  const Spalsh4({super.key});
+class Splash5 extends StatelessWidget {
+  const Splash5({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +14,7 @@ class Spalsh4 extends StatelessWidget {
           children: [
             Text(
               textAlign: TextAlign.center,
-              "عاوز تشرب كام لتر في اليوم ؟",
+              'عدد المرات اللي عاوز تشرب فيها؟',
               style: TextStyle(
                 fontFamily: 'Marhey',
                 color: Colors.white,
@@ -24,16 +23,34 @@ class Spalsh4 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 50,
+              height: 45,
+            ),
+            CustomTextFiled(),
+            SizedBox(
+              height: 100,
+            ),
+            Text(
+              textAlign: TextAlign.center,
+              'مستعد تشرب في المرة الواحدة قد ايه؟',
+              style: TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(
+              height: 45,
             ),
             CustomTextFiled(),
             Positioned(
               right: 10,
+              bottom: 10,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Image.asset('assets/images/man_water.png'),
                   Text(
-                    'يلا بينا',
+                    '!اللي بعدو',
                     style: TextStyle(
                       fontFamily: 'Marhey',
                       color: Colors.white,
@@ -58,7 +75,7 @@ class Spalsh4 extends StatelessWidget {
                       })
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),
