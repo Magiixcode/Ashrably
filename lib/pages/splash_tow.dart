@@ -9,14 +9,14 @@ class Splash2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff480CA8),
+      backgroundColor: const Color(0xff480CA8),
       body: Stack(
         children: [
           CustomBackgroundColor(direction: Alignment.bottomRight),
           Column(
             children: [
               CustomPaint(
-                size: Size(200, 100),
+                size: const Size(200, 100),
                 painter: EllipsePainter(
                   width: 332.05,
                   hight: 369.5,
@@ -24,7 +24,7 @@ class Splash2 extends StatelessWidget {
                   left: 214,
                 ),
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   // Image(
@@ -33,10 +33,10 @@ class Splash2 extends StatelessWidget {
                   // )),
                 ],
               ),
-              Spacer(
+              const Spacer(
                 flex: 1,
               ),
-              Center(
+              const Center(
                   child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 30),
                 child: Text(
@@ -51,44 +51,50 @@ class Splash2 extends StatelessWidget {
                   ),
                 ),
               )),
-              Spacer(
+              const Spacer(
                 flex: 1,
               ),
               Positioned(
                 right: 10,
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image(
+                    const Image(
                         image: AssetImage(
                       'assets/images/Ellipse 2.png',
                     )),
-                    SizedBox(
-                      width: 130,
-                    ),
-                    Text(
-                      'التالي',
-                      style: TextStyle(
-                        fontFamily: 'Marhey',
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) {
+                              return const Splash3();
+                            },
+                          ),
+                        );
+                      },
+                      child: const Padding(
+                        padding: EdgeInsets.only(right: 30.0),
+                        child: Row(
+                          children: [
+                            Text(
+                              'التالي',
+                              style: TextStyle(
+                                fontFamily: 'Marhey',
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                    IconButton(
-                        icon: Icon(
-                          Icons.arrow_forward_ios,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (BuildContext context) {
-                                return Splash3();
-                              },
-                            ),
-                          );
-                        })
                   ],
                 ),
               )

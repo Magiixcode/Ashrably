@@ -13,10 +13,10 @@ class CustomBackgroundColor extends StatelessWidget {
         Align(
           alignment: direction,
           child: Container(
-            height: MediaQuery.of(context).size.height / 4.8,
-            width: MediaQuery.of(context).size.width / 1.9,
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Color(0xff4CC9F0)),
+            height: 250,
+            width: 250,
+            decoration: const BoxDecoration(
+                shape: BoxShape.circle, color: Color(0xff4CC9F0)),
           ),
         ),
         BackdropFilter(
