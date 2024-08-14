@@ -1,5 +1,7 @@
 import 'package:ashrably_app/pages/splash_five.dart';
+import 'package:ashrably_app/widget/ask_text.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
+import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
 class Spalsh4 extends StatelessWidget {
@@ -8,55 +10,45 @@ class Spalsh4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff480CA8),
+      backgroundColor: const Color(0xff480CA8),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
           children: [
-            Text(
-              textAlign: TextAlign.center,
-              "عاوز تشرب كام لتر في اليوم ؟",
-              style: TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+            Positioned(
+              top: 250,
+              left: 10,
+              right: 10,
+              child: AskText(
+                textAlign: TextAlign.center,
+                horizontal: 20,
+                vertical: 20,
+                text: "عاوز تشرب كام لتر في اليوم ؟",
               ),
             ),
-            SizedBox(
-              height: 50,
-            ),
-            CustomTextFiled(),
+            const Positioned(top: 350, left: 130, child: CustomTextFiled()),
             Positioned(
-              right: 10,
-              child: Row(
-                children: [
-                  Image.asset('assets/images/man_water.png'),
-                  Text(
-                    'يلا بينا',
-                    style: TextStyle(
-                      fontFamily: 'Marhey',
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  IconButton(
-                      icon: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return Splash5();
-                            },
-                          ),
-                        );
-                      })
-                ],
+              bottom: -60,
+              left: -35,
+              child: Image.asset(
+                'assets/images/man_water.png',
+                height: 450,
+              ),
+            ),
+            Positioned(
+              bottom: 50,
+              right: 0,
+              child: NextButton(
+                page: const Splash5(),
+                iconColor: Colors.white,
+                text: "اللي بعدو",
+                padding: 30,
+                styleText: const TextStyle(
+                  fontFamily: 'Marhey',
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+                icon: Icons.arrow_forward_ios,
               ),
             )
           ],

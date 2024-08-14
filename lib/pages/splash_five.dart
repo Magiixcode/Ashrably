@@ -1,5 +1,7 @@
 import 'package:ashrably_app/pages/spalsh_six.dart';
+import 'package:ashrably_app/widget/ask_text.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
+import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
 class Splash5 extends StatelessWidget {
@@ -8,76 +10,38 @@ class Splash5 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff480CA8),
+      backgroundColor: const Color(0xff480CA8),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              textAlign: TextAlign.center,
-              'عدد المرات اللي عاوز تشرب فيها؟',
-              style: TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              AskText(
+                horizontal: 20,
+                vertical: 50,
+                text: 'عدد المرات اللي عاوز تشرب فيها؟',
               ),
-            ),
-            SizedBox(
-              height: 45,
-            ),
-            CustomTextFiled(),
-            SizedBox(
-              height: 100,
-            ),
-            Text(
-              textAlign: TextAlign.center,
-              'مستعد تشرب في المرة الواحدة قد ايه؟',
-              style: TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+              const CustomTextFiled(),
+              AskText(
+                horizontal: 20,
+                vertical: 50,
+                text: 'مستعد تشرب في المرة الواحدة قد ايه؟',
               ),
-            ),
-            SizedBox(
-              height: 45,
-            ),
-            CustomTextFiled(),
-            Positioned(
-              right: 10,
-              bottom: 10,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    '!اللي بعدو',
-                    style: TextStyle(
-                      fontFamily: 'Marhey',
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  IconButton(
-                      icon: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (BuildContext context) {
-                              return Spalsh6();
-                            },
-                          ),
-                        );
-                      })
-                ],
+              const CustomTextFiled(),
+              NextButton(
+                page: const Spalsh6(),
+                iconColor: Colors.white,
+                text: "!اللي بعدو",
+                padding: 30,
+                styleText: const TextStyle(
+                  fontFamily: 'Marhey',
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+                icon: Icons.arrow_forward_ios,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

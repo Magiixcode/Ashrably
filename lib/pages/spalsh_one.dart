@@ -13,7 +13,8 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     Future.delayed(
-      Duration(seconds: 2),
+      const Duration(seconds: 2),
+      // ignore: use_build_context_synchronously
       () => Navigator.of(context)
           .pushReplacement(MaterialPageRoute(builder: (_) => const Splash2())),
     );
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Color(0xff480CA8),
       body: Center(
         child: Text(
