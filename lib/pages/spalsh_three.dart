@@ -1,3 +1,4 @@
+import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/spalsh_four.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class Splash3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff480CA8),
+      backgroundColor: KPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(

@@ -1,3 +1,5 @@
+import 'package:ashrably_app/constens.dart';
+import 'package:ashrably_app/pages/home_pgae.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:flutter/material.dart';
 
@@ -7,10 +9,8 @@ class Spalsh6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff480CA8),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
+        backgroundColor: KPrimaryColor,
+        body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text(
             textAlign: TextAlign.center,
             'ايه الوقت اللي عايز تشرب فيه؟',
@@ -60,12 +60,36 @@ class Spalsh6 extends StatelessWidget {
               ),
             ],
           ),
-          Positioned(
-            right: 50,
-            child: Image.asset('assets/images/man_clock.png'),
-          )
-        ],
-      ),
-    );
+          Image.asset('assets/images/man_clock.png'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                'يلا بينا',
+                style: TextStyle(
+                  fontFamily: 'Marhey',
+                  color: Colors.white,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return HomePgae();
+                        },
+                      ),
+                    );
+                  })
+            ],
+          ),
+        ]));
   }
 }

@@ -1,3 +1,4 @@
+import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/spalsh_three.dart';
 import 'package:ashrably_app/widget/custom_background_blur.dart';
 import 'package:ashrably_app/widget/custom_ellipse.dart';
@@ -9,7 +10,7 @@ class Splash2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff480CA8),
+      backgroundColor: KPrimaryColor,
       body: Stack(
         children: [
           CustomBackgroundColor(direction: Alignment.bottomRight),

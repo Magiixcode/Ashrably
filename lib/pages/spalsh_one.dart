@@ -1,14 +1,15 @@
+import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/splash_tow.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class Splash1 extends StatefulWidget {
+  const Splash1({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<Splash1> createState() => _Splash1State();
 }
 
-class _HomePageState extends State<HomePage> {
+class _Splash1State extends State<Splash1> {
   @override
   void initState() {
     super.initState();
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff480CA8),
+      backgroundColor: KPrimaryColor,
       body: Center(
         child: Text(
           'اشربلي',

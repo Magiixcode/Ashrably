@@ -1,3 +1,4 @@
+import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/splash_five.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +9,7 @@ class Spalsh4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff480CA8),
+      backgroundColor: KPrimaryColor,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
