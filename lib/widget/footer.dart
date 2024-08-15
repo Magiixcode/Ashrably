@@ -1,3 +1,6 @@
+import 'package:ashrably_app/utils/lunch_url.dart';
+import 'package:flutter/material.dart';
+
 class Footer extends StatelessWidget {
   const Footer({super.key});
 

@@ -27,7 +27,7 @@ class Spalsh4 extends StatelessWidget {
             bottom: 50,
             right: 0,
             child: NextButton(
-              page: const Splash5(),
+              page: Splash5(),
               iconColor: Colors.white,
               text: "!اللي بعدو",
               padding: 30,

@@ -1,10 +1,7 @@
 import 'package:ashrably_app/utils/constens.dart';
-import 'package:ashrably_app/utils/lunch_url.dart';
 import 'package:ashrably_app/widget/footer.dart';
 import 'package:ashrably_app/widget/setting_app_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});

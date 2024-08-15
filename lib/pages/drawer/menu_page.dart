@@ -1,10 +1,24 @@
+import 'package:ashrably_app/pages/drawer/info_page.dart';
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/settings/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
-class MenuPage extends StatelessWidget {
+class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
+
+  @override
+  State<MenuPage> createState() => _MenuPageState();
+}
+
+class _MenuPageState extends State<MenuPage> {
+  void _openIconButtonPtressed() {
+    showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      builder: (Ctx) => InfoPage(),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +85,7 @@ class MenuPage extends StatelessWidget {
             ),
             ListTile(
               leading: const Icon(
-                Icons.group,
+                Icons.info,
                 color: Colors.white,
               ),
               title: const Text(
@@ -83,7 +97,7 @@ class MenuPage extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onTap: () {},
+              onTap: _openIconButtonPtressed,
             ),
             ListTile(
               leading: const Icon(
