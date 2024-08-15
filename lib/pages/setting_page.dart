@@ -135,6 +135,25 @@ class SettingPage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/images/instgaram.png',
+                  height: 40,
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Image.asset(
+                  'assets/images/facebok.png',
+                  height: 40,
+                ),
+              ],
+            )
           ],
         ),
       ),
