@@ -1,6 +1,8 @@
 import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/widget/setting_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -141,16 +143,24 @@ class SettingPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/instgaram.png',
-                  height: 40,
+                InkWell(
+                  onTap: () {
+                    _launchInstagramURL('https://www.instagram.com/magixcode/');
+                  },
+                  child: Image.asset(
+                    'assets/images/instgaram.png',
+                    height: 40,
+                  ),
                 ),
                 SizedBox(
                   width: 10,
                 ),
-                Image.asset(
-                  'assets/images/facebok.png',
-                  height: 40,
+                InkWell(
+                  onTap: () {},
+                  child: Image.asset(
+                    'assets/images/facebok.png',
+                    height: 40,
+                  ),
                 ),
               ],
             )
@@ -158,5 +168,13 @@ class SettingPage extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+void _launchInstagramURL(String url) async {
+  if (await canLaunchUrl(Uri(scheme: 'https', path: url))) {
+    await launchUrl(Uri(scheme: 'https', path: url));
+  } else {
+    throw 'Could not launch $url';
   }
 }
