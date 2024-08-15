@@ -28,18 +28,26 @@ class Splash5 extends StatelessWidget {
                 text: 'مستعد تشرب في المرة الواحدة قد ايه؟',
               ),
               const CustomTextFiled(),
-              NextButton(
-                page: const Spalsh6(),
-                iconColor: Colors.white,
-                text: "!اللي بعدو",
-                padding: 30,
-                styleText: const TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
+              Padding(
+                padding: const EdgeInsets.only(top: 200),
+                child: Row(
+                  children: [
+                    const Spacer(),
+                    NextButton(
+                      page: const Spalsh6(),
+                      iconColor: Colors.white,
+                      text: "!اللي بعدو",
+                      padding: 30,
+                      styleText: const TextStyle(
+                        fontFamily: 'Marhey',
+                        color: Colors.white,
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      icon: Icons.arrow_forward_ios,
+                    ),
+                  ],
                 ),
-                icon: Icons.arrow_forward_ios,
               ),
             ],
           ),
