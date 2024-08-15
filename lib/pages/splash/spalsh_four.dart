@@ -29,7 +29,7 @@ class Spalsh4 extends StatelessWidget {
             child: NextButton(
               page: const Splash5(),
               iconColor: Colors.white,
-              text: "اللي بعدو",
+              text: "!اللي بعدو",
               padding: 30,
               styleText: const TextStyle(
                 fontFamily: 'Marhey',
@@ -41,7 +41,7 @@ class Spalsh4 extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 250,
+            bottom: 500,
             left: 10,
             right: 10,
             child: AskText(
@@ -51,7 +51,7 @@ class Spalsh4 extends StatelessWidget {
               text: "عاوز تشرب كام لتر في اليوم ؟",
             ),
           ),
-          const Positioned(top: 350, left: 130, child: CustomTextFiled()),
+          const Positioned(bottom: 350, left: 130, child: CustomTextFiled()),
         ],
       ),
     );
