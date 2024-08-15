@@ -10,15 +10,16 @@ class CustomTextFiled extends StatelessWidget {
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16), color: Colors.white),
       child: TextField(
+        keyboardType: const TextInputType.numberWithOptions(),
         decoration: InputDecoration(
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Colors.white,
             ),
             borderRadius: BorderRadius.circular(16),
           ),
           border: OutlineInputBorder(
-            borderSide: BorderSide(
+            borderSide: const BorderSide(
               color: Colors.white,
             ),
             borderRadius: BorderRadius.circular(16),
