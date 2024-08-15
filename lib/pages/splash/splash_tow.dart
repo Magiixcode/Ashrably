@@ -1,5 +1,5 @@
 import 'package:ashrably_app/constens.dart';
-import 'package:ashrably_app/pages/spalsh_three.dart';
+import 'package:ashrably_app/pages/splash/spalsh_three.dart';
 import 'package:ashrably_app/widget/custom_background_blur.dart';
 import 'package:ashrably_app/widget/custom_ellipse.dart';
 import 'package:ashrably_app/widget/next_button.dart';

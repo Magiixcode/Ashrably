@@ -1,5 +1,6 @@
 import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/home_pgae.dart';
+import 'package:ashrably_app/pages/splash/drawer_page.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:flutter/material.dart';
 
@@ -83,7 +84,7 @@ class Spalsh6 extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (BuildContext context) {
-                          return HomePgae();
+                          return DrawerPage();
                         },
                       ),
                     );

@@ -1,4 +1,4 @@
-import 'package:ashrably_app/pages/spalsh_one.dart';
+import 'package:ashrably_app/pages/splash/spalsh_one.dart';
 import 'package:flutter/material.dart';
 
 void main() {

@@ -1,5 +1,5 @@
 import 'package:ashrably_app/constens.dart';
-import 'package:ashrably_app/pages/splash_tow.dart';
+import 'package:ashrably_app/pages/splash/splash_tow.dart';
 import 'package:flutter/material.dart';
 
 class Splash1 extends StatefulWidget {

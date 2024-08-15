@@ -1,5 +1,7 @@
 import 'package:ashrably_app/constens.dart';
+import 'package:ashrably_app/pages/splash/drawer_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class HomePgae extends StatelessWidget {
   const HomePgae({super.key});
@@ -22,14 +24,12 @@ class HomePgae extends StatelessWidget {
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (BuildContext context) {
-                            return HomePgae();
-                          },
-                        ),
-                      );
+                      ZoomDrawer.of(context)!.toggle();
+                      // if (ZoomDrawer.of(context)!.isOpen()) {
+                      //   ZoomDrawer.of(context)!.close();
+                      // } else {
+                      //   ZoomDrawer.of(context)!.open();
+                      // }
                     }),
                 Text(
                   'الرئيسية ',
