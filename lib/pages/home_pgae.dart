@@ -91,14 +91,19 @@ class HomePgae extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text(
-              'عاش يابطل ',
-              style: TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(
+                  'عاش يابطل ',
+                  style: TextStyle(
+                    fontFamily: 'Marhey',
+                    color: Colors.white,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 60,
