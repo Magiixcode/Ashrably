@@ -12,7 +12,7 @@ class MenuPage extends StatelessWidget {
       backgroundColor: KPrimaryColor,
       body: Padding(
         padding: const EdgeInsets.only(top: 80),
-        child: Column(
+        child: ListView(
           children: [
             ListTile(
               leading: const Icon(

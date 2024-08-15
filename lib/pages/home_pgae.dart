@@ -3,9 +3,14 @@ import 'package:ashrably_app/pages/splash/drawer_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
-class HomePgae extends StatelessWidget {
+class HomePgae extends StatefulWidget {
   const HomePgae({super.key});
 
+  @override
+  State<HomePgae> createState() => _HomePgaeState();
+}
+
+class _HomePgaeState extends State<HomePgae> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
