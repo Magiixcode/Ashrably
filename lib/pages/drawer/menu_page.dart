@@ -1,5 +1,5 @@
-import 'package:ashrably_app/constens.dart';
-import 'package:ashrably_app/pages/setting_page.dart';
+import 'package:ashrably_app/utils/constens.dart';
+import 'package:ashrably_app/pages/settings/setting_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -49,7 +49,7 @@ class MenuPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (BuildContext context) {
-                  return SettingPage();
+                  return const SettingPage();
                 }));
               },
             ),

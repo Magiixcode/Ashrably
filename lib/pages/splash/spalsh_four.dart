@@ -1,4 +1,4 @@
-import 'package:ashrably_app/constens.dart';
+import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/splash/splash_five.dart';
 import 'package:ashrably_app/widget/ask_text.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';

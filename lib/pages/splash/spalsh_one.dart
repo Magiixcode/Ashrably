@@ -1,4 +1,4 @@
-import 'package:ashrably_app/constens.dart';
+import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/splash/splash_tow.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class _Splash1State extends State<Splash1> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: KPrimaryColor,
       body: Center(
         child: Text(

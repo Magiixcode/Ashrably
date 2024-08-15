@@ -1,6 +1,6 @@
-import 'package:ashrably_app/constens.dart';
-import 'package:ashrably_app/pages/home_pgae.dart';
-import 'package:ashrably_app/pages/splash/menu_page.dart';
+import 'package:ashrably_app/utils/constens.dart';
+import 'package:ashrably_app/pages/home/home_pgae.dart';
+import 'package:ashrably_app/pages/drawer/menu_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -19,9 +19,9 @@ class _DrawerPageState extends State<DrawerPage> {
     return Scaffold(
       backgroundColor: KPrimaryColor,
       body: ZoomDrawer(
-        menuScreen: MenuPage(),
-        mainScreen: HomePgae(),
-        boxShadow: [
+        menuScreen: const MenuPage(),
+        mainScreen: const HomePgae(),
+        boxShadow: const [
           BoxShadow(color: Colors.white, offset: Offset(-5, -3)),
           BoxShadow(color: Colors.white, offset: Offset(0, 5))
         ],

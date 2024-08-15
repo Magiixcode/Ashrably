@@ -1,4 +1,6 @@
-import 'package:ashrably_app/constens.dart';
+import 'package:ashrably_app/utils/constens.dart';
+import 'package:ashrably_app/utils/lunch_url.dart';
+import 'package:ashrably_app/widget/footer.dart';
 import 'package:ashrably_app/widget/setting_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -16,8 +18,8 @@ class SettingPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SettingAppBar(),
-            SizedBox(
+            const SettingAppBar(),
+            const SizedBox(
               height: 40,
             ),
             ListView(
@@ -113,68 +115,13 @@ class SettingPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
-            Text(
-              'تم تطوير وتصميم هذا التطبيق بواسطة فريق  ',
-              style: TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Text(
-              'MagixCode',
-              style: TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                InkWell(
-                  onTap: () {
-                    _launchInstagramURL('https://www.instagram.com/magixcode/');
-                  },
-                  child: Image.asset(
-                    'assets/images/instgaram.png',
-                    height: 40,
-                  ),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Image.asset(
-                    'assets/images/facebok.png',
-                    height: 40,
-                  ),
-                ),
-              ],
-            )
+            const Footer(),
           ],
         ),
       ),
     );
-  }
-}
-
-void _launchInstagramURL(String url) async {
-  if (await canLaunchUrl(Uri(scheme: 'https', path: url))) {
-    await launchUrl(Uri(scheme: 'https', path: url));
-  } else {
-    throw 'Could not launch $url';
   }
 }

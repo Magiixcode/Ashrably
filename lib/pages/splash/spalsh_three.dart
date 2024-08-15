@@ -1,4 +1,4 @@
-import 'package:ashrably_app/constens.dart';
+import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/splash/spalsh_four.dart';
 import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';

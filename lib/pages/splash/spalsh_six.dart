@@ -1,5 +1,5 @@
-import 'package:ashrably_app/constens.dart';
-import 'package:ashrably_app/pages/splash/drawer_page.dart';
+import 'package:ashrably_app/utils/constens.dart';
+import 'package:ashrably_app/pages/drawer/drawer_page.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';

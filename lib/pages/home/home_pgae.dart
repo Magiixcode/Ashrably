@@ -1,5 +1,5 @@
-import 'package:ashrably_app/constens.dart';
-import 'package:ashrably_app/pages/splash/drawer_page.dart';
+import 'package:ashrably_app/utils/constens.dart';
+import 'package:ashrably_app/pages/drawer/drawer_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -24,7 +24,7 @@ class _HomePgaeState extends State<HomePgae> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.menu,
                       color: Colors.white,
                     ),
@@ -36,7 +36,7 @@ class _HomePgaeState extends State<HomePgae> {
                       //   ZoomDrawer.of(context)!.open();
                       // }
                     }),
-                Text(
+                const Text(
                   'الرئيسية ',
                   style: TextStyle(
                     fontFamily: 'Marhey',
@@ -47,10 +47,10 @@ class _HomePgaeState extends State<HomePgae> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
-            Text(
+            const Text(
               'التقدم ',
               style: TextStyle(
                 fontFamily: 'Marhey',
@@ -59,7 +59,7 @@ class _HomePgaeState extends State<HomePgae> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Stack(
@@ -69,7 +69,7 @@ class _HomePgaeState extends State<HomePgae> {
                   width: 320,
                   height: 110,
                   decoration: BoxDecoration(
-                    color: Color(0xff4CC9F0),
+                    color: const Color(0xff4CC9F0),
                     borderRadius: BorderRadius.circular(25),
                   ),
                 ),
@@ -78,10 +78,10 @@ class _HomePgaeState extends State<HomePgae> {
                   width: 170,
                   height: 110,
                   decoration: BoxDecoration(
-                    color: Color(0xff1911E9),
+                    color: const Color(0xff1911E9),
                     borderRadius: BorderRadius.circular(25),
                   ),
-                  child: Text(
+                  child: const Text(
                     '55%',
                     style: TextStyle(
                       fontFamily: 'Marhey',
@@ -93,10 +93,10 @@ class _HomePgaeState extends State<HomePgae> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
@@ -110,7 +110,7 @@ class _HomePgaeState extends State<HomePgae> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 60,
             ),
             Container(
@@ -118,10 +118,10 @@ class _HomePgaeState extends State<HomePgae> {
               width: 240,
               height: 55,
               decoration: BoxDecoration(
-                color: Color(0xffB69EDC),
+                color: const Color(0xffB69EDC),
                 borderRadius: BorderRadius.circular(25),
               ),
-              child: Text(
+              child: const Text(
                 'التنبية القادم : 10:15 دقيقة ',
                 style: TextStyle(
                   fontFamily: 'Marhey',
@@ -131,10 +131,10 @@ class _HomePgaeState extends State<HomePgae> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            Text(
+            const Text(
               ' معدل الشرب في الساعة الواحدة  :500 ملي لتر  ',
               style: TextStyle(
                 fontFamily: 'Marhey',
@@ -143,10 +143,10 @@ class _HomePgaeState extends State<HomePgae> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 40,
             ),
-            Text(
+            const Text(
               ' خلي الميه جنبك دايما، وزوقها، واشربها قبل وأثناء وبعد الرياضة، وكل فواكه وخضار كتير، ومتنساش تسمع لجسمك ',
               style: TextStyle(
                 fontFamily: 'Marhey',
