@@ -14,25 +14,24 @@ class Splash2 extends StatelessWidget {
       backgroundColor: KPrimaryColor,
       body: Stack(
         children: [
-          CustomBackgroundColor(direction: Alignment.bottomRight),
           Column(
             children: [
-              CustomPaint(
-                size: const Size(200, 100),
-                painter: EllipsePainter(
-                  width: 332.05,
-                  hight: 369.5,
-                  top: -167,
-                  left: 214,
-                ),
-              ),
+              // CustomPaint(
+              //   size: const Size(200, 100),
+              //   painter: EllipsePainter(
+              //     width: 332.05,
+              //     hight: 369.5,
+              //     top: -167,
+              //     left: 214,
+              //   ),
+              // ),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  // Image(
-                  //     image: AssetImage(
-                  //   'assets/images/Ellipse 3.png',
-                  // )),
+                  Image(
+                      image: AssetImage(
+                    'assets/images/Ellipse 3.png',
+                  )),
                 ],
               ),
               const Spacer(

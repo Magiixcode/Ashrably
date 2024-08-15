@@ -14,7 +14,6 @@ class MenuPage extends StatefulWidget {
 class _MenuPageState extends State<MenuPage> {
   void _openIconButtonPtressed() {
     showModalBottomSheet(
-      isScrollControlled: true,
       context: context,
       builder: (Ctx) => InfoPage(),
     );
