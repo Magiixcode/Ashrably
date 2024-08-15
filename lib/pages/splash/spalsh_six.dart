@@ -2,6 +2,7 @@ import 'package:ashrably_app/constens.dart';
 import 'package:ashrably_app/pages/home_pgae.dart';
 import 'package:ashrably_app/pages/splash/drawer_page.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
+import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
 class Spalsh6 extends StatelessWidget {
@@ -11,86 +12,81 @@ class Spalsh6 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: KPrimaryColor,
-        body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text(
-            textAlign: TextAlign.center,
-            'ايه الوقت اللي عايز تشرب فيه؟',
-            style: TextStyle(
-              fontFamily: 'Marhey',
-              color: Colors.white,
-              fontSize: 25,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CustomTextFiled(),
-              SizedBox(
-                width: 20,
-              ),
-              Text(
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 150),
+            child:
+                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+              const Text(
                 textAlign: TextAlign.center,
-                'الي',
+                'ايه الوقت اللي عايز تشرب فيه؟',
                 style: TextStyle(
                   fontFamily: 'Marhey',
                   color: Colors.white,
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(
-                width: 20,
+              const SizedBox(
+                height: 50,
               ),
-              CustomTextFiled(),
-              SizedBox(
-                width: 20,
-              ),
-              Text(
-                textAlign: TextAlign.center,
-                'من',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          Image.asset('assets/images/man_clock.png'),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                'يلا بينا',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              IconButton(
-                  icon: Icon(
-                    Icons.arrow_forward_ios,
-                    color: Colors.white,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomTextFiled(),
+                  SizedBox(
+                    width: 20,
                   ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) {
-                          return DrawerPage();
-                        },
-                      ),
-                    );
-                  })
-            ],
+                  Text(
+                    textAlign: TextAlign.center,
+                    'الي',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  CustomTextFiled(),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Text(
+                    textAlign: TextAlign.center,
+                    'من',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
+              Image.asset('assets/images/man_clock.png'),
+              Row(
+                children: [
+                  const Spacer(),
+                  NextButton(
+                    page: const DrawerPage(),
+                    iconColor: Colors.white,
+                    text: "!يلا بينا",
+                    padding: 30,
+                    styleText: const TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    icon: Icons.arrow_forward_ios,
+                  ),
+                ],
+              ),
+            ]),
           ),
-        ]));
+        ));
   }
 }
