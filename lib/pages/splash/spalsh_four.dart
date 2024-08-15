@@ -16,21 +16,28 @@ class Spalsh4 extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Positioned(
+            bottom: 650,
+            child: Image(
+                image: AssetImage(
+              'assets/images/Ellipse 3 right.png',
+            )),
+          ),
+          Positioned(
             bottom: -60,
-            left: -35,
+            left: -15,
             child: Image.asset(
               'assets/images/man_water.png',
               height: 450,
             ),
           ),
           Positioned(
-            bottom: 50,
+            bottom: 30,
             right: 0,
             child: NextButton(
               page: Splash5(),
               iconColor: Colors.white,
               text: "!اللي بعدو",
-              padding: 30,
+              padding: 20,
               styleText: const TextStyle(
                 fontFamily: 'Marhey',
                 color: Colors.white,
@@ -41,7 +48,7 @@ class Spalsh4 extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 500,
+            bottom: 450,
             left: 10,
             right: 10,
             child: AskText(
@@ -51,7 +58,7 @@ class Spalsh4 extends StatelessWidget {
               text: "عاوز تشرب كام لتر في اليوم ؟",
             ),
           ),
-          const Positioned(bottom: 350, left: 130, child: CustomTextFiled()),
+          const Positioned(bottom: 370, left: 160, child: CustomTextFiled()),
         ],
       ),
     );

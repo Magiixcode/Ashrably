@@ -16,6 +16,15 @@ class Splash5 extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Image(
+                      image: AssetImage(
+                    'assets/images/Ellipse 3 splash5.png',
+                  )),
+                ],
+              ),
               AskText(
                 horizontal: 20,
                 vertical: 50,
