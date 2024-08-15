@@ -57,23 +57,39 @@ class HomePgae extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Container(
-              alignment: Alignment.center,
-              width: 320,
-              height: 110,
-              decoration: BoxDecoration(
-                color: Color(0xff1911E9),
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Text(
-                '55%',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+            Stack(
+              children: [
+                Container(
+                  alignment: Alignment.center,
+                  width: 320,
+                  height: 110,
+                  decoration: BoxDecoration(
+                    color: Color(0xff4CC9F0),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
                 ),
-              ),
+                Container(
+                  alignment: Alignment.center,
+                  width: 170,
+                  height: 110,
+                  decoration: BoxDecoration(
+                    color: Color(0xff1911E9),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Text(
+                    '55%',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 10,
             ),
             Text(
               'عاش يابطل ',
