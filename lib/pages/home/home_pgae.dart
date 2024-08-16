@@ -29,9 +29,10 @@ class _HomePgaeState extends State<HomePgae> {
             top: 0,
             right: 0,
             child: Image(
-                image: AssetImage(
-              'assets/images/Ellipse top right1.png',
-            )),
+              image: AssetImage(
+                'assets/images/Ellipse top right1.png',
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 45),

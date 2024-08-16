@@ -9,9 +9,13 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: KPrimaryColor,
       body: Padding(
-        padding: const EdgeInsets.only(right: 24, left: 50),
+        padding: const EdgeInsets.only(
+          right: 24,
+          left: 50,
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -64,7 +68,14 @@ class SettingPage extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () async {
+                    var time = await showTimePicker(
+                      context: context,
+                      initialTime: TimeOfDay.now(),
+                      cancelText: 'CANCEL',
+                      confirmText: 'DONE',
+                    );
+                  },
                 ),
                 ListTile(
                   title: const Text(

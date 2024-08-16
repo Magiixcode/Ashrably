@@ -10,6 +10,7 @@ class Spalsh6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: KPrimaryColor,
         body: Stack(
           children: [
@@ -47,14 +48,26 @@ class Spalsh6 extends StatelessWidget {
                     const SizedBox(
                       height: 50,
                     ),
-                    const Row(
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        CustomTextFiled(),
+                        ElevatedButton(
+                            onPressed: () async {
+                              var time = await showTimePicker(
+                                context: context,
+                                initialTime: TimeOfDay.now(),
+                                cancelText: 'CANCEL',
+                                confirmText: 'DONE',
+                              );
+                            },
+                            child: const Text(
+                              '6',
+                              style: TextStyle(color: Colors.black),
+                            )),
                         SizedBox(
                           width: 20,
                         ),
-                        Text(
+                        const Text(
                           textAlign: TextAlign.center,
                           'الي',
                           style: TextStyle(
@@ -67,11 +80,23 @@ class Spalsh6 extends StatelessWidget {
                         SizedBox(
                           width: 20,
                         ),
-                        CustomTextFiled(),
+                        ElevatedButton(
+                            onPressed: () async {
+                              var time = await showTimePicker(
+                                context: context,
+                                initialTime: TimeOfDay.now(),
+                                cancelText: 'CANCEL',
+                                confirmText: 'DONE',
+                              );
+                            },
+                            child: Text(
+                              '6',
+                              style: TextStyle(color: Colors.black),
+                            )),
                         SizedBox(
                           width: 20,
                         ),
-                        Text(
+                        const Text(
                           textAlign: TextAlign.center,
                           'من',
                           style: TextStyle(
