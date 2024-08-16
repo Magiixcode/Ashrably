@@ -33,14 +33,6 @@ class _MenuPageState extends State<MenuPage> {
               'assets/images/Ellipse 3 bottom menue.png',
             )),
           ),
-          Positioned(
-            top: 0,
-            right: 0,
-            child: Image(
-                image: AssetImage(
-              'assets/images/Ellipse 4top menue.png',
-            )),
-          ),
           Padding(
             padding: const EdgeInsets.only(top: 80),
             child: ListView(

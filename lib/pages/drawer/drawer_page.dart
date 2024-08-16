@@ -18,18 +18,30 @@ class _DrawerPageState extends State<DrawerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: KPrimaryColor,
-      body: ZoomDrawer(
-        menuScreen: const MenuPage(),
-        mainScreen: const HomePgae(),
-        boxShadow: const [
-          BoxShadow(color: Colors.white, offset: Offset(-5, -3)),
-          BoxShadow(color: Colors.white, offset: Offset(0, 5))
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Image(
+                image: AssetImage(
+              'assets/images/Ellipse 4top menue.png',
+            )),
+          ),
+          ZoomDrawer(
+            menuScreen: const MenuPage(),
+            mainScreen: const HomePgae(),
+            boxShadow: const [
+              BoxShadow(color: Colors.white, offset: Offset(-5, -3)),
+              BoxShadow(color: Colors.white, offset: Offset(0, 5))
+            ],
+            style: DrawerStyle.defaultStyle,
+            controller: zoomDrawerController,
+            angle: 0,
+            mainScreenScale: 0.23,
+            clipMainScreen: true,
+          ),
         ],
-        style: DrawerStyle.defaultStyle,
-        controller: zoomDrawerController,
-        angle: 0,
-        mainScreenScale: 0.15,
-        clipMainScreen: true,
       ),
     );
   }
