@@ -5,9 +5,23 @@ import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
-class Splash5 extends StatelessWidget {
+class Splash5 extends StatefulWidget {
   Splash5({super.key});
 
+  @override
+  State<Splash5> createState() => _Splash5State();
+}
+
+class _Splash5State extends State<Splash5> {
+  String _dropdownValue = '100 ml';
+  var items = [
+    '100 ml',
+    '200 ml',
+    '300 ml',
+    '400 ml',
+    '500 ml',
+    '600 ml',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +50,45 @@ class Splash5 extends StatelessWidget {
                     ],
                   ),
                   AskText(
-                    horizontal: 20,
+                    textAlign: TextAlign.right,
+                    horizontal: 80,
                     vertical: 50,
-                    text: 'عدد المرات اللي عاوز تشرب فيها؟',
+                    text:
+                        'تقريبا كدا ايه حجم الكوباية اللي هتشربها في المرة الواحدة؟',
                   ),
-                  const CustomTextFiled(),
-                  AskText(
-                    horizontal: 20,
-                    vertical: 50,
-                    text: 'مستعد تشرب في المرة الواحدة قد ايه؟',
+                  Container(
+                    width: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    child: Center(
+                      child: DropdownButton(
+                        items: items.map((String item) {
+                          return DropdownMenuItem(
+                            value: item,
+                            child: Text(item),
+                          );
+                        }).toList(),
+                        onChanged: (String? newValue) {
+                          setState(() {
+                            _dropdownValue = newValue!;
+                          });
+                        },
+                        value: _dropdownValue,
+                        borderRadius: BorderRadius.circular(10),
+                        icon: const Icon(Icons.keyboard_arrow_down),
+                        iconSize: 20,
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),
+                        underline: Container(),
+                      ),
+                    ),
                   ),
-                  const CustomTextFiled(),
                   Padding(
-                    padding: const EdgeInsets.only(top: 200),
+                    padding: const EdgeInsets.only(top: 340),
                     child: Row(
                       children: [
                         const Spacer(),
