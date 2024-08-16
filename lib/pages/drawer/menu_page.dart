@@ -4,6 +4,7 @@ import 'package:ashrably_app/pages/settings/setting_page.dart';
 import 'package:ashrably_app/utils/lunch_url.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:share_plus/share_plus.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -125,7 +126,9 @@ class _MenuPageState extends State<MenuPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Share.share('check out my website https://example.com');
+                  },
                 )
               ],
             ),
