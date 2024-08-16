@@ -5,8 +5,9 @@ import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
 class Spalsh6 extends StatelessWidget {
-  const Spalsh6({super.key});
-
+  const Spalsh6({super.key, required this.liters, required this.sizeCup});
+  final double liters;
+  final double sizeCup;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +15,7 @@ class Spalsh6 extends StatelessWidget {
         backgroundColor: KPrimaryColor,
         body: Stack(
           children: [
-            Positioned(
+            const Positioned(
               top: 0,
               right: 0,
               child: Image(
@@ -22,7 +23,7 @@ class Spalsh6 extends StatelessWidget {
                 'assets/images/Ellipse 3 splash5.png',
               )),
             ),
-            Positioned(
+            const Positioned(
               bottom: 0,
               right: 0,
               child: Image(
@@ -64,7 +65,7 @@ class Spalsh6 extends StatelessWidget {
                               '6',
                               style: TextStyle(color: Colors.black),
                             )),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         const Text(
@@ -77,7 +78,7 @@ class Spalsh6 extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         ElevatedButton(
@@ -89,11 +90,11 @@ class Spalsh6 extends StatelessWidget {
                                 confirmText: 'DONE',
                               );
                             },
-                            child: Text(
+                            child: const Text(
                               '6',
                               style: TextStyle(color: Colors.black),
                             )),
-                        SizedBox(
+                        const SizedBox(
                           width: 20,
                         ),
                         const Text(

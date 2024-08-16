@@ -48,22 +48,18 @@ class Splash2 extends StatelessWidget {
               'assets/images/Ellipse 2.png',
             )),
           ),
-          Positioned(
-            right: 10,
-            bottom: kButtonPadding,
-            child: NextButton(
-              page: const Splash3(),
-              iconColor: Colors.white,
-              text: 'التالي',
-              padding: 30,
-              styleText: const TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-              icon: Icons.arrow_forward_ios,
+          NextButton(
+            page: const Splash3(),
+            iconColor: Colors.white,
+            text: 'التالي',
+            padding: 30,
+            styleText: const TextStyle(
+              fontFamily: 'Marhey',
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
             ),
+            icon: Icons.arrow_forward_ios,
           ),
         ],
       ),

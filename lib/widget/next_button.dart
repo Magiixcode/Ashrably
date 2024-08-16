@@ -17,33 +17,37 @@ class NextButton extends StatelessWidget {
   Widget page;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: padding),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(15),
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (BuildContext context) {
-                return page;
-              },
+    return Positioned(
+      bottom: 50,
+      right: 5,
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: padding),
+        child: InkWell(
+          borderRadius: BorderRadius.circular(15),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return page;
+                },
+              ),
+            );
+          },
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+            child: Row(
+              children: [
+                Text(
+                  text,
+                  style: styleText,
+                ),
+                Icon(
+                  icon,
+                  color: iconColor,
+                ),
+              ],
             ),
-          );
-        },
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
-          child: Row(
-            children: [
-              Text(
-                text,
-                style: styleText,
-              ),
-              Icon(
-                icon,
-                color: iconColor,
-              ),
-            ],
           ),
         ),
       ),
