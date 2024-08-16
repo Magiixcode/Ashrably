@@ -1,13 +1,20 @@
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/drawer/drawer_page.dart';
+import 'package:ashrably_app/widget/ask_text.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
 
-class Spalsh6 extends StatelessWidget {
+class Spalsh6 extends StatefulWidget {
   const Spalsh6({super.key, required this.liters, required this.sizeCup});
   final double liters;
   final double sizeCup;
+
+  @override
+  State<Spalsh6> createState() => _Spalsh6State();
+}
+
+class _Spalsh6State extends State<Spalsh6> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +30,22 @@ class Spalsh6 extends StatelessWidget {
                 'assets/images/Ellipse 3 splash5.png',
               )),
             ),
+            Positioned(
+              bottom: -80,
+              left: -140,
+              child: Image.asset('assets/images/man_clock.png'),
+            ),
+            Positioned(
+              top: MediaQuery.of(context).size.height / 3,
+              left: MediaQuery.of(context).size.width / 15,
+              right: MediaQuery.of(context).size.width / 15,
+              child: AskText(
+                textAlign: TextAlign.center,
+                horizontal: 0,
+                vertical: 5,
+                text: 'ايه الوقت اللي عايز تشرب فيه؟',
+              ),
+            ),
             const Positioned(
               bottom: 0,
               right: 0,
@@ -31,110 +54,108 @@ class Spalsh6 extends StatelessWidget {
                 'assets/images/Ellipse bottom right1.png',
               )),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 170),
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Text(
-                      textAlign: TextAlign.center,
-                      'ايه الوقت اللي عايز تشرب فيه؟',
-                      style: TextStyle(
-                        fontFamily: 'Marhey',
-                        color: Colors.white,
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 50,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        ElevatedButton(
-                            onPressed: () async {
-                              var time = await showTimePicker(
-                                context: context,
-                                initialTime: TimeOfDay.now(),
-                                cancelText: 'CANCEL',
-                                confirmText: 'DONE',
-                              );
-                            },
-                            child: const Text(
-                              '6',
-                              style: TextStyle(color: Colors.black),
-                            )),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        const Text(
-                          textAlign: TextAlign.center,
-                          'الي',
-                          style: TextStyle(
-                            fontFamily: 'Marhey',
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        ElevatedButton(
-                            onPressed: () async {
-                              var time = await showTimePicker(
-                                context: context,
-                                initialTime: TimeOfDay.now(),
-                                cancelText: 'CANCEL',
-                                confirmText: 'DONE',
-                              );
-                            },
-                            child: const Text(
-                              '6',
-                              style: TextStyle(color: Colors.black),
-                            )),
-                        const SizedBox(
-                          width: 20,
-                        ),
-                        const Text(
-                          textAlign: TextAlign.center,
-                          'من',
-                          style: TextStyle(
-                            fontFamily: 'Marhey',
-                            color: Colors.white,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      left: 0,
-                      child: Image.asset('assets/images/man_clock.png'),
-                    ),
-                    Row(
-                      children: [
-                        const Spacer(),
-                        NextButton(
-                          page: const DrawerPage(),
-                          iconColor: Colors.white,
-                          text: "!يلا بينا",
-                          padding: 0,
-                          styleText: const TextStyle(
-                            fontFamily: 'Marhey',
-                            color: Colors.white,
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                          ),
-                          icon: Icons.arrow_forward_ios,
-                        ),
-                      ],
-                    ),
-                  ]),
+            Positioned(
+                top: MediaQuery.of(context).size.height / 2.5,
+                left: MediaQuery.of(context).size.width / 15,
+                right: MediaQuery.of(context).size.width / 15,
+                child: const TimePicker()),
+            NextButton(
+              page: const DrawerPage(),
+              iconColor: Colors.white,
+              text: "!يلا بينا",
+              padding: 20,
+              styleText: const TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+              icon: Icons.arrow_forward_ios,
             ),
           ],
         ));
+  }
+}
+
+class TimePicker extends StatefulWidget {
+  const TimePicker({super.key});
+
+  @override
+  State<TimePicker> createState() => _TimePickerState();
+}
+
+class _TimePickerState extends State<TimePicker> {
+  @override
+  Widget build(BuildContext context) {
+    int hour = 0;
+    int min = 0;
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 20.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          ElevatedButton(
+              onPressed: () async {
+                var time = await showTimePicker(
+                  context: context,
+                  initialTime: TimeOfDay.now(),
+                  cancelText: 'الغاء',
+                  confirmText: 'تمام',
+                );
+                hour = time!.hour;
+                min = time.minute;
+                setState(() {});
+                print(hour);
+              },
+              child: Text(
+                "$hour : $min",
+                style: const TextStyle(color: Colors.black),
+              )),
+          const SizedBox(
+            width: 20,
+          ),
+          const Text(
+            textAlign: TextAlign.center,
+            'الي',
+            style: TextStyle(
+              fontFamily: 'Marhey',
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          ElevatedButton(
+              onPressed: () async {
+                var time = await showTimePicker(
+                  context: context,
+                  initialTime: TimeOfDay.now(),
+                  cancelText: 'CANCEL',
+                  confirmText: 'DONE',
+                );
+              },
+              child: const Text(
+                '6',
+                style: TextStyle(color: Colors.black),
+              )),
+          const SizedBox(
+            width: 20,
+          ),
+          const Text(
+            textAlign: TextAlign.center,
+            'من',
+            style: TextStyle(
+              fontFamily: 'Marhey',
+              color: Colors.white,
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

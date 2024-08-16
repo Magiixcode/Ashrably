@@ -92,7 +92,7 @@ class _Splash5State extends State<Splash5> {
             ),
             iconColor: Colors.white,
             text: "!اللي بعدو",
-            padding: 30,
+            padding: 20,
             styleText: const TextStyle(
               fontFamily: 'Marhey',
               color: Colors.white,

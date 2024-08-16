@@ -52,7 +52,7 @@ class Splash2 extends StatelessWidget {
             page: const Splash3(),
             iconColor: Colors.white,
             text: 'التالي',
-            padding: 30,
+            padding: 20,
             styleText: const TextStyle(
               fontFamily: 'Marhey',
               color: Colors.white,

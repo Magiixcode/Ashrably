@@ -1,6 +1,7 @@
 import 'package:ashrably_app/pages/drawer/info_page.dart';
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/settings/setting_page.dart';
+import 'package:ashrably_app/utils/lunch_url.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
@@ -15,7 +16,7 @@ class _MenuPageState extends State<MenuPage> {
   void _openIconButtonPtressed() {
     showModalBottomSheet(
       context: context,
-      builder: (Ctx) => InfoPage(),
+      builder: (Ctx) => const InfoPage(),
     );
   }
 
@@ -25,7 +26,7 @@ class _MenuPageState extends State<MenuPage> {
       backgroundColor: KPrimaryColor,
       body: Stack(
         children: [
-          Positioned(
+          const Positioned(
             bottom: 0,
             left: 0,
             child: Image(
@@ -90,7 +91,9 @@ class _MenuPageState extends State<MenuPage> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    launchURL('mailto://magixcodesoftware@gmail.com');
+                  },
                 ),
                 ListTile(
                   leading: const Icon(
