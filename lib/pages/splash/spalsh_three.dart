@@ -12,13 +12,30 @@ class Splash3 extends StatelessWidget {
       backgroundColor: KPrimaryColor,
       body: Stack(
         children: [
-          Positioned(
+          const Positioned(
             bottom: 0,
             right: 0,
             child: Image(
                 image: AssetImage(
               'assets/images/Ellipse bottom right1.png',
             )),
+          ),
+          Positioned(
+            bottom: kButtonPadding,
+            right: 15,
+            child: NextButton(
+              page: const Spalsh4(),
+              iconColor: Colors.white,
+              text: 'يلا بينا',
+              padding: 30,
+              styleText: const TextStyle(
+                fontFamily: 'Marhey',
+                color: Colors.white,
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+              ),
+              icon: Icons.arrow_forward_ios,
+            ),
           ),
           Column(
             children: [
@@ -61,31 +78,6 @@ class Splash3 extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(
-                height: 170,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Positioned(
-                    bottom: 50,
-                    right: 15,
-                    child: NextButton(
-                      page: const Spalsh4(),
-                      iconColor: Colors.white,
-                      text: 'يلا بينا',
-                      padding: 30,
-                      styleText: const TextStyle(
-                        fontFamily: 'Marhey',
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      icon: Icons.arrow_forward_ios,
-                    ),
-                  ),
-                ],
               ),
             ],
           ),
