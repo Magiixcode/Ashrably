@@ -16,6 +16,14 @@ class Spalsh4 extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Positioned(
+            bottom: 0,
+            right: 0,
+            child: Image(
+                image: AssetImage(
+              'assets/images/Ellipse bottom right1.png',
+            )),
+          ),
+          Positioned(
             bottom: 650,
             child: Image(
                 image: AssetImage(

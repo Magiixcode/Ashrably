@@ -23,99 +23,119 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: KPrimaryColor,
-      body: Padding(
-        padding: const EdgeInsets.only(top: 80),
-        child: ListView(
-          children: [
-            ListTile(
-              leading: const Icon(
-                Icons.home,
-                color: Colors.white,
-              ),
-              title: const Text(
-                'الصفحة الرئيسية ',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+      body: Stack(
+        children: [
+          Positioned(
+            bottom: 0,
+            left: 0,
+            child: Image(
+                image: AssetImage(
+              'assets/images/Ellipse 3 bottom menue.png',
+            )),
+          ),
+          Positioned(
+            top: 0,
+            right: 0,
+            child: Image(
+                image: AssetImage(
+              'assets/images/Ellipse 4top menue.png',
+            )),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 80),
+            child: ListView(
+              children: [
+                ListTile(
+                  leading: const Icon(
+                    Icons.home,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'الصفحة الرئيسية ',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onTap: () {
+                    ZoomDrawer.of(context)!.toggle();
+                  },
                 ),
-              ),
-              onTap: () {
-                ZoomDrawer.of(context)!.toggle();
-              },
+                ListTile(
+                  leading: const Icon(
+                    Icons.settings,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'الاعدادات',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return const SettingPage();
+                    }));
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.call,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'تواصل معانا',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onTap: () {},
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.info,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'عنا',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onTap: _openIconButtonPtressed,
+                ),
+                ListTile(
+                  leading: const Icon(
+                    Icons.share,
+                    color: Colors.white,
+                  ),
+                  title: const Text(
+                    'مشاركة التطبيق',
+                    style: TextStyle(
+                      fontFamily: 'Marhey',
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  onTap: () {},
+                )
+              ],
             ),
-            ListTile(
-              leading: const Icon(
-                Icons.settings,
-                color: Colors.white,
-              ),
-              title: const Text(
-                'الاعدادات',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) {
-                  return const SettingPage();
-                }));
-              },
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.call,
-                color: Colors.white,
-              ),
-              title: const Text(
-                'تواصل معانا',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              onTap: () {},
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.info,
-                color: Colors.white,
-              ),
-              title: const Text(
-                'عنا',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              onTap: _openIconButtonPtressed,
-            ),
-            ListTile(
-              leading: const Icon(
-                Icons.share,
-                color: Colors.white,
-              ),
-              title: const Text(
-                'مشاركة التطبيق',
-                style: TextStyle(
-                  fontFamily: 'Marhey',
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              onTap: () {},
-            )
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

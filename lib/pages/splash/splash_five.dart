@@ -14,49 +14,61 @@ class Splash5 extends StatelessWidget {
       backgroundColor: KPrimaryColor,
       body: Center(
         child: SingleChildScrollView(
-          child: Column(
+          child: Stack(
             children: [
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Image(
+                    image: AssetImage(
+                  'assets/images/Ellipse bottom right1.png',
+                )),
+              ),
+              Column(
                 children: [
-                  Image(
-                      image: AssetImage(
-                    'assets/images/Ellipse 3 splash5.png',
-                  )),
-                ],
-              ),
-              AskText(
-                horizontal: 20,
-                vertical: 50,
-                text: 'عدد المرات اللي عاوز تشرب فيها؟',
-              ),
-              const CustomTextFiled(),
-              AskText(
-                horizontal: 20,
-                vertical: 50,
-                text: 'مستعد تشرب في المرة الواحدة قد ايه؟',
-              ),
-              const CustomTextFiled(),
-              Padding(
-                padding: const EdgeInsets.only(top: 200),
-                child: Row(
-                  children: [
-                    const Spacer(),
-                    NextButton(
-                      page: const Spalsh6(),
-                      iconColor: Colors.white,
-                      text: "!اللي بعدو",
-                      padding: 30,
-                      styleText: const TextStyle(
-                        fontFamily: 'Marhey',
-                        color: Colors.white,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      icon: Icons.arrow_forward_ios,
+                  const Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Image(
+                          image: AssetImage(
+                        'assets/images/Ellipse 3 splash5.png',
+                      )),
+                    ],
+                  ),
+                  AskText(
+                    horizontal: 20,
+                    vertical: 50,
+                    text: 'عدد المرات اللي عاوز تشرب فيها؟',
+                  ),
+                  const CustomTextFiled(),
+                  AskText(
+                    horizontal: 20,
+                    vertical: 50,
+                    text: 'مستعد تشرب في المرة الواحدة قد ايه؟',
+                  ),
+                  const CustomTextFiled(),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 200),
+                    child: Row(
+                      children: [
+                        const Spacer(),
+                        NextButton(
+                          page: const Spalsh6(),
+                          iconColor: Colors.white,
+                          text: "!اللي بعدو",
+                          padding: 30,
+                          styleText: const TextStyle(
+                            fontFamily: 'Marhey',
+                            color: Colors.white,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          icon: Icons.arrow_forward_ios,
+                        ),
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ],
           ),

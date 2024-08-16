@@ -14,6 +14,14 @@ class Splash2 extends StatelessWidget {
       backgroundColor: KPrimaryColor,
       body: Stack(
         children: [
+          Positioned(
+            bottom: 0,
+            right: 0,
+            child: Image(
+                image: AssetImage(
+              'assets/images/Ellipse bottom right1.png',
+            )),
+          ),
           Column(
             children: [
               // CustomPaint(
