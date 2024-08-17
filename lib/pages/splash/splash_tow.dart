@@ -1,8 +1,10 @@
+import 'package:ashrably_app/pages/drawer/drawer_page.dart';
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/splash/spalsh_three.dart';
 import 'package:ashrably_app/widget/ask_text.dart';
 import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Splash2 extends StatelessWidget {
   const Splash2({super.key});

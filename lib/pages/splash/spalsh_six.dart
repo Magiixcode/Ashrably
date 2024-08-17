@@ -4,6 +4,7 @@ import 'package:ashrably_app/widget/ask_text.dart';
 import 'package:ashrably_app/widget/custom_text-filed.dart';
 import 'package:ashrably_app/widget/next_button.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Spalsh6 extends StatefulWidget {
   const Spalsh6({super.key, required this.liters, required this.sizeCup});
@@ -59,19 +60,30 @@ class _Spalsh6State extends State<Spalsh6> {
                 left: MediaQuery.of(context).size.width / 15,
                 right: MediaQuery.of(context).size.width / 15,
                 child: const TimePicker()),
-            NextButton(
-              page: const DrawerPage(),
-              iconColor: Colors.white,
-              text: "!يلا بينا",
-              padding: 20,
-              styleText: const TextStyle(
-                fontFamily: 'Marhey',
-                color: Colors.white,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
-              ),
-              icon: Icons.arrow_forward_ios,
-            ),
+            Positioned(
+                bottom: 50,
+                child: ElevatedButton(
+                    onPressed: () async {
+                      final SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      await prefs.setBool('user', false);
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (_) => const DrawerPage()));
+                    },
+                    child: const Text("!يلا بينا")))
+            // NextButton(
+            //   page: const DrawerPage(),
+            //   iconColor: Colors.white,
+            //   text: "!يلا بينا",
+            //   padding: 20,
+            //   styleText: const TextStyle(
+            //     fontFamily: 'Marhey',
+            //     color: Colors.white,
+            //     fontSize: 25,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            //   icon: Icons.arrow_forward_ios,
+            // ),
           ],
         ));
   }
