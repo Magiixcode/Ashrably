@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final SharedPreferences prefs = await SharedPreferences.getInstance();
+  await prefs.setBool('user', true);
   bool? user = prefs.getBool('user');
   runApp(AshrablyApp(user: user!));
 }
