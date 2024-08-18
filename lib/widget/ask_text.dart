@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class AskText extends StatelessWidget {
-  AskText(
+  const AskText(
       {super.key,
       required this.horizontal,
       this.textAlign,
       required this.vertical,
       required this.text});
-  String text;
-  TextAlign? textAlign;
-  double horizontal;
-  double vertical;
+  final String text;
+  final TextAlign? textAlign;
+  final double horizontal;
+  final double vertical;
   @override
   Widget build(BuildContext context) {
     return Padding(

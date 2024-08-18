@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class NextButton extends StatelessWidget {
-  NextButton(
+  const NextButton(
       {super.key,
       required this.icon,
       required this.padding,
@@ -9,12 +9,12 @@ class NextButton extends StatelessWidget {
       required this.text,
       required this.iconColor,
       required this.page});
-  double padding;
-  String text;
-  Color iconColor;
-  TextStyle styleText;
-  IconData icon;
-  Widget page;
+  final double padding;
+  final String text;
+  final Color iconColor;
+  final TextStyle styleText;
+  final IconData icon;
+  final Widget page;
   @override
   Widget build(BuildContext context) {
     return Positioned(

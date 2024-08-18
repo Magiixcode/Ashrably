@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CustomBackgroundColor extends StatelessWidget {
-  CustomBackgroundColor({required this.direction, super.key});
-  Alignment direction;
+  const CustomBackgroundColor({required this.direction, super.key});
+  final Alignment direction;
   @override
   Widget build(BuildContext context) {
     return Stack(
