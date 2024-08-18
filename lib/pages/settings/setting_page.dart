@@ -1,3 +1,5 @@
+import 'package:ashrably_app/bloc/store_cubit/store_cubit.dart';
+import 'package:ashrably_app/model/water_model.dart';
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/widget/footer.dart';
 import 'package:ashrably_app/widget/setting_app_bar.dart';
@@ -97,7 +99,10 @@ class SettingPage extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    StoreCubit store = StoreCubit();
+                    store.saveData(model: WaterModel(liters: 2));
+                  },
                 ),
                 ListTile(
                   title: const Text(

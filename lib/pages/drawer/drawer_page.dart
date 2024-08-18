@@ -1,3 +1,4 @@
+import 'package:ashrably_app/model/water_model.dart';
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/home/home_pgae.dart';
 import 'package:ashrably_app/pages/drawer/menu_page.dart';
@@ -5,8 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 class DrawerPage extends StatefulWidget {
-  const DrawerPage({super.key});
-
+  const DrawerPage({super.key, required this.model});
+  final WaterModel model;
   @override
   State<DrawerPage> createState() => _DrawerPageState();
 }
@@ -20,7 +21,7 @@ class _DrawerPageState extends State<DrawerPage> {
       backgroundColor: KPrimaryColor,
       body: Stack(
         children: [
-          Positioned(
+          const Positioned(
             top: 0,
             right: 0,
             child: Image(
@@ -30,7 +31,9 @@ class _DrawerPageState extends State<DrawerPage> {
           ),
           ZoomDrawer(
             menuScreen: const MenuPage(),
-            mainScreen: const HomePgae(),
+            mainScreen: HomePgae(
+              waterModel: widget.model,
+            ),
             boxShadow: const [
               BoxShadow(color: Colors.white, offset: Offset(-5, -3)),
               BoxShadow(color: Colors.white, offset: Offset(0, 5))

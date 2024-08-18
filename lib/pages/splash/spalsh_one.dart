@@ -1,12 +1,13 @@
+import 'package:ashrably_app/bloc/store_cubit/store_cubit.dart';
+import 'package:ashrably_app/model/water_model.dart';
 import 'package:ashrably_app/pages/drawer/drawer_page.dart';
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/splash/splash_tow.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class Splash1 extends StatefulWidget {
-  const Splash1({super.key, required this.user});
-  final bool user;
+  const Splash1({super.key});
+
   @override
   State<Splash1> createState() => _Splash1State();
 }
@@ -15,16 +16,27 @@ class _Splash1State extends State<Splash1> {
   @override
   void initState() {
     super.initState();
+    StoreCubit store = StoreCubit();
+
     Future.delayed(
       const Duration(seconds: 2),
       // ignore: use_build_context_synchronously
-      () {
-        if (widget.user == true) {
+
+      () async {
+        bool newUser = await store.readData();
+
+        if (newUser == true) {
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (_) => const Splash2()));
         } else {
-          Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (_) => const DrawerPage()));
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+              builder: (_) => DrawerPage(
+                    model: WaterModel(
+                      liters: 2,
+                      sizeCup: 250,
+                      timeStart: const TimeOfDay(hour: 6, minute: 30),
+                    ),
+                  )));
         }
       },
     );

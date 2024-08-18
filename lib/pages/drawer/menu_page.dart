@@ -17,7 +17,7 @@ class _MenuPageState extends State<MenuPage> {
   void _openIconButtonPtressed() {
     showModalBottomSheet(
       context: context,
-      builder: (Ctx) => const InfoPage(),
+      builder: (context) => const InfoPage(),
     );
   }
 
@@ -127,7 +127,8 @@ class _MenuPageState extends State<MenuPage> {
                     ),
                   ),
                   onTap: () {
-                    Share.share('check out my website https://example.com');
+                    Share.share(
+                        'جرب تطبيق اشربلي لمتابعه كمية المياه اللي بتشربها في اليوم');
                   },
                 )
               ],

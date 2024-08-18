@@ -1,3 +1,5 @@
+import 'package:ashrably_app/bloc/store_cubit/store_cubit.dart';
+import 'package:ashrably_app/model/water_model.dart';
 import 'package:ashrably_app/utils/constens.dart';
 import 'package:ashrably_app/pages/drawer/drawer_page.dart';
 import 'package:ashrably_app/widget/ask_text.dart';
@@ -56,34 +58,55 @@ class _Spalsh6State extends State<Spalsh6> {
               )),
             ),
             Positioned(
-                top: MediaQuery.of(context).size.height / 2.5,
-                left: MediaQuery.of(context).size.width / 15,
-                right: MediaQuery.of(context).size.width / 15,
-                child: const TimePicker()),
-            Positioned(
-                bottom: 50,
-                child: ElevatedButton(
-                    onPressed: () async {
-                      final SharedPreferences prefs =
-                          await SharedPreferences.getInstance();
-                      await prefs.setBool('user', false);
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (_) => const DrawerPage()));
-                    },
-                    child: const Text("!يلا بينا")))
-            // NextButton(
-            //   page: const DrawerPage(),
-            //   iconColor: Colors.white,
-            //   text: "!يلا بينا",
-            //   padding: 20,
-            //   styleText: const TextStyle(
-            //     fontFamily: 'Marhey',
-            //     color: Colors.white,
-            //     fontSize: 25,
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            //   icon: Icons.arrow_forward_ios,
-            // ),
+              bottom: 50,
+              right: 5,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(15),
+                  onTap: () async {
+                    StoreCubit store = StoreCubit();
+                    store.storeData(user: false);
+                    bool use = await store.readData();
+                    store.saveData(
+                        model: WaterModel(
+                            liters: widget.liters,
+                            sizeCup: widget.sizeCup.toInt(),
+                            timeStart: TimeOfDay.now()));
+                    print(use);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return DrawerPage(
+                            model: WaterModel(
+                              liters: widget.liters,
+                              sizeCup: widget.sizeCup.toInt(),
+                              timeStart: const TimeOfDay(hour: 6, minute: 30),
+                            ),
+                          );
+                        },
+                      ),
+                    );
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+                    child: Row(
+                      children: [
+                        Text(
+                          "!يلا بينا",
+                          style: TextStyle(),
+                        ),
+                        Icon(
+                          Icons.arrow_back_ios,
+                          color: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
           ],
         ));
   }
@@ -115,9 +138,11 @@ class _TimePickerState extends State<TimePicker> {
                   cancelText: 'الغاء',
                   confirmText: 'تمام',
                 );
-                hour = time!.hour;
-                min = time.minute;
-                setState(() {});
+
+                setState(() {
+                  hour = time!.hour;
+                  min = time.minute;
+                });
                 print(hour);
               },
               child: Text(
@@ -171,3 +196,88 @@ class _TimePickerState extends State<TimePicker> {
     );
   }
 }
+
+//  Positioned(
+//                 top: MediaQuery.of(context).size.height / 2.5,
+//                 left: MediaQuery.of(context).size.width / 15,
+//                 right: MediaQuery.of(context).size.width / 15,
+//                 child: Padding(
+//                   padding: const EdgeInsets.symmetric(vertical: 20.0),
+//                   child: Row(
+//                     mainAxisAlignment: MainAxisAlignment.center,
+//                     children: [
+//                       ElevatedButton(
+//                           onPressed: () async {
+//                             var time = await showTimePicker(
+//                               context: context,
+//                               initialTime: TimeOfDay.now(),
+//                               cancelText: 'الغاء',
+//                               confirmText: 'تمام',
+//                             );
+
+//                             setState(() {
+//                               hour = time!.hour;
+//                               min = time.minute;
+//                             });
+//                             print(hour);
+//                           },
+//                           child: Text(
+//                             "$hour : $min",
+//                             style: const TextStyle(color: Colors.black),
+//                           )),
+//                       const SizedBox(
+//                         width: 20,
+//                       ),
+//                       const Text(
+//                         textAlign: TextAlign.center,
+//                         'الي',
+//                         style: TextStyle(
+//                           fontFamily: 'Marhey',
+//                           color: Colors.white,
+//                           fontSize: 20,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                       const SizedBox(
+//                         width: 20,
+//                       ),
+//                       ElevatedButton(
+//                           onPressed: () async {
+//                             var time = await showTimePicker(
+//                               context: context,
+//                               initialTime: TimeOfDay.now(),
+//                               cancelText: 'CANCEL',
+//                               confirmText: 'DONE',
+//                             );
+//                           },
+//                           child: const Text(
+//                             '6',
+//                             style: TextStyle(color: Colors.black),
+//                           )),
+//                       const SizedBox(
+//                         width: 20,
+//                       ),
+//                       const Text(
+//                         textAlign: TextAlign.center,
+//                         'من',
+//                         style: TextStyle(
+//                           fontFamily: 'Marhey',
+//                           color: Colors.white,
+//                           fontSize: 20,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 )),
+//             Positioned(
+//                 bottom: 50,
+//                 child: ElevatedButton(
+//                     onPressed: () async {
+//                       final SharedPreferences prefs =
+//                           await SharedPreferences.getInstance();
+//                       await prefs.setBool('user', false);
+//                       Navigator.of(context).push(MaterialPageRoute(
+//                           builder: (_) => const DrawerPage()));
+//                     },
+//                     child: const Text("!يلا بينا"))),
