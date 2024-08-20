@@ -6,7 +6,7 @@ class WaterRate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      ' معدل الشرب في الساعة الواحدة  :$rate ملي لتر  ',
+      ' معدل الشرب في الساعة الواحدة  : ${rate.toInt()} ملي لتر  ',
       textDirection: TextDirection.rtl,
       style: const TextStyle(
         fontFamily: 'Marhey',

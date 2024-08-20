@@ -42,7 +42,7 @@ class _Spalsh6State extends State<Spalsh6> {
               top: MediaQuery.of(context).size.height / 3,
               left: MediaQuery.of(context).size.width / 15,
               right: MediaQuery.of(context).size.width / 15,
-              child: AskText(
+              child: const AskText(
                 textAlign: TextAlign.center,
                 horizontal: 0,
                 vertical: 5,
@@ -68,11 +68,9 @@ class _Spalsh6State extends State<Spalsh6> {
                     StoreCubit store = StoreCubit();
                     store.storeData(user: false);
                     bool use = await store.readData();
-                    store.saveData(
-                        model: WaterModel(
-                            liters: widget.liters,
-                            sizeCup: widget.sizeCup.toInt(),
-                            timeStart: TimeOfDay.now()));
+                    store.saveDoubleData(value: widget.liters, name: 'liters');
+                    store.saveDoubleData(
+                        value: widget.sizeCup, name: 'SizeCup');
                     print(use);
                     Navigator.push(
                       context,

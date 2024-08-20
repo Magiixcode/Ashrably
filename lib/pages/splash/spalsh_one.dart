@@ -25,6 +25,8 @@ class _Splash1State extends State<Splash1> {
       () async {
         bool newUser = await store.readData();
 
+        double liters = await store.getDoubleData(name: 'liters');
+        double sizeCup = await store.getDoubleData(name: 'SizeCup');
         if (newUser == true) {
           Navigator.of(context).pushReplacement(
               MaterialPageRoute(builder: (_) => const Splash2()));
@@ -32,8 +34,8 @@ class _Splash1State extends State<Splash1> {
           Navigator.of(context).pushReplacement(MaterialPageRoute(
               builder: (_) => DrawerPage(
                     model: WaterModel(
-                      liters: 2,
-                      sizeCup: 250,
+                      liters: liters,
+                      sizeCup: sizeCup.toInt(),
                       timeStart: const TimeOfDay(hour: 6, minute: 30),
                     ),
                   )));

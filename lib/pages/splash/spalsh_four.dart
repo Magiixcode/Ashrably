@@ -28,14 +28,13 @@ class _Spalsh4State extends State<Spalsh4> {
               'assets/images/Ellipse bottom right1.png',
             )),
           ),
-          Positioned(
+          const Positioned(
             top: 0,
             left: 0,
             child: Image(
-              image: const AssetImage(
+              image: AssetImage(
                 'assets/images/Ellipse 3 right.png',
               ),
-              height: MediaQuery.of(context).size.height / 4,
             ),
           ),
           Positioned(
@@ -52,7 +51,7 @@ class _Spalsh4State extends State<Spalsh4> {
             top: MediaQuery.of(context).size.height / 3,
             left: 10,
             right: 10,
-            child: AskText(
+            child: const AskText(
               textAlign: TextAlign.center,
               horizontal: 20,
               vertical: 20,

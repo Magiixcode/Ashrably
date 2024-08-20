@@ -8,22 +8,26 @@ class CustomBackgroundColor extends StatelessWidget {
   final Alignment direction;
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: direction,
-          child: Container(
-            height: 250,
-            width: 250,
-            decoration: const BoxDecoration(
-                shape: BoxShape.circle, color: Color(0xff4CC9F0)),
+    return SizedBox(
+      height: 500,
+      width: 300,
+      child: Stack(
+        children: [
+          Align(
+            alignment: direction,
+            child: Container(
+              height: 400,
+              width: 400,
+              decoration: const BoxDecoration(
+                  shape: BoxShape.circle, color: Color(0xff4CC9F0)),
+            ),
           ),
-        ),
-        BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
-          child: Container(),
-        ),
-      ],
+          BackdropFilter(
+            filter: ImageFilter.blur(sigmaX: 80, sigmaY: 50),
+            child: Container(),
+          ),
+        ],
+      ),
     );
   }
 }

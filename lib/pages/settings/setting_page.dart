@@ -10,6 +10,7 @@ class SettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<double> items = [1, 2, 3, 4, 5, 6];
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: KPrimaryColor,
@@ -101,7 +102,7 @@ class SettingPage extends StatelessWidget {
                   ),
                   onTap: () {
                     StoreCubit store = StoreCubit();
-                    store.saveData(model: WaterModel(liters: 2));
+                    store.saveDoubleData(value: 5, name: 'liters');
                   },
                 ),
                 ListTile(
@@ -124,7 +125,10 @@ class SettingPage extends StatelessWidget {
                       fontSize: 12,
                     ),
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    StoreCubit store = StoreCubit();
+                    store.saveDoubleData(value: 250, name: 'SizeCup');
+                  },
                 ),
               ],
             ),

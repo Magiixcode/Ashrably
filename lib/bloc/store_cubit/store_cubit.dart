@@ -36,17 +36,24 @@ class StoreCubit extends Cubit<StoreState> {
     }
   }
 
-  void saveData({required WaterModel model}) async {
+  void saveDoubleData({required double value, required String name}) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setDouble('liters', model.liters!);
-    prefs.setInt('SizeCup', model.sizeCup!);
+    prefs.setDouble(name, value);
   }
 
-  Future<WaterModel> getData({required WaterModel model}) async {
+  void saveIntData({required int value, required String name}) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    double? liters = prefs.getDouble('liters');
-    int? sizeCup = prefs.getInt('SizeCup');
-    return WaterModel(
-        liters: liters!, sizeCup: sizeCup!, timeStart: TimeOfDay.now());
+    prefs.setInt(name, value);
+  }
+
+  Future<double> getDoubleData({required String name}) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    // prefs.setDouble('liters', 1);
+    // prefs.setInt('SizeCup', 250);
+    double? liters = prefs.getDouble(name);
+
+    emit(StoreData());
+    return liters!;
   }
 }
